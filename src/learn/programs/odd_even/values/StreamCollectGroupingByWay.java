@@ -1,10 +1,11 @@
-package learn.programs.odd_even;
+package learn.programs.odd_even.values;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
-public class StreamFilterWay {
+public class StreamCollectGroupingByWay {
 
     public static void main(String[] args) {
         System.out.println("Enter the numbers: ");
@@ -21,14 +22,14 @@ public class StreamFilterWay {
     }
 
     private static void printOddEvenNumbers(List<Integer> numbers) {
-        var evenNumbers = numbers.stream()
-            .filter(x -> x % 2 == 0)
-            .toList();
+        var numberList = numbers.stream()
+            .collect(Collectors.groupingBy(x -> x % 2 == 0));
+
+        var evenNumbers = numberList.get(true);
         System.out.println("Even numbers: " + evenNumbers);
 
-        var oddNumbers = numbers.stream()
-            .filter(x -> x % 2 != 0)
-            .toList();
+        var oddNumbers = numberList.get(false);
         System.out.println("Odd numbers: " + oddNumbers);
+
     }
 }

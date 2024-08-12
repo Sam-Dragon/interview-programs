@@ -1,4 +1,4 @@
-package learn.programs.odd_even;
+package learn.programs.odd_even.values;
 
 import java.util.Scanner;
 import java.util.stream.Stream;

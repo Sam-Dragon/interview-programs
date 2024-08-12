@@ -1,11 +1,11 @@
-package learn.programs.odd_even;
+package learn.programs.odd_even.aggregation.count;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class StreamCollectPartitionedBy {
+public class StreamCollectorCountingWay {
 
     public static void main(String[] args) {
         System.out.println("Enter the numbers: ");
@@ -18,18 +18,12 @@ public class StreamCollectPartitionedBy {
             .toList();
         System.out.println("Input numbers: " + numberList);
 
-        printOddEvenNumbers(numberList);
+        System.out.println("Total Even Numbers = " + countNumbers(numberList));
     }
 
-    private static void printOddEvenNumbers(List<Integer> numbers) {
-        var numberList = numbers.stream()
-            .collect(Collectors.partitioningBy(x -> x % 2 == 0));
-
-        var evenNumbers = numberList.get(true);
-        System.out.println("Even numbers: " + evenNumbers);
-
-        var oddNumbers = numberList.get(false);
-        System.out.println("Odd numbers: " + oddNumbers);
-
+    private static long countNumbers(List<Integer> numbers) {
+        return numbers.stream()
+            .filter(n -> n % 2 == 0)
+            .collect(Collectors.counting());
     }
 }

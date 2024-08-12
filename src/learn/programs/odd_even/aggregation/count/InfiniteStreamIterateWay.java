@@ -1,4 +1,4 @@
-package learn.programs.odd_even;
+package learn.programs.odd_even.aggregation.count;
 
 import java.util.Scanner;
 import java.util.stream.Stream;
@@ -19,15 +19,9 @@ public class InfiniteStreamIterateWay {
 
     private static void withIterate(int number) {
         System.out.println("Even Numbers :: ");
-        Stream.iterate(0, i -> i < number, n -> n + 1)
+        long count = Stream.iterate(0, i -> i < number, n -> n + 1)
             .filter(n -> n % 2 == 0)
-            .forEach(e -> System.out.print(e + " "));
-        System.out.println();
-
-        System.out.println("Odd Numbers :: ");
-        Stream.iterate(0, i -> i < number, n -> n + 1)
-            .filter(n -> n % 2 != 0)
-            .forEach(e -> System.out.print(e + " "));
-        System.out.println();
+            .count();
+        System.out.println("Total Even Numbers = " + count);
     }
 }

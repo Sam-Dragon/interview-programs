@@ -1,4 +1,4 @@
-package misc.programs;
+package misc.programs.string.group.character;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -20,10 +20,10 @@ public class GroupingCharacterOfString {
 
     private static void groupTheCharacters(String input) {
         Arrays.stream(input.split(""))
-            .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.toList()))
-            .values()
-            .stream()
-            .flatMap(Collection::stream)
-            .forEach(System.out::print);
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.toList()))
+                .values()
+                .stream()
+                .flatMap(Collection::stream)
+                .forEach(System.out::print);
     }
 }

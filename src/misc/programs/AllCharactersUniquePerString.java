@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class UniqueCharactersInString {
+public class AllCharactersUniquePerString {
 
     public static String checkIfUnique(String input) {
         int uniqueCharLength = Stream.of(input.split(""))
@@ -18,7 +18,7 @@ public class UniqueCharactersInString {
         String[] array = {"hi", "hello", "good", "morning"};
 
         Arrays.stream(array)
-            .map(UniqueCharactersInString::checkIfUnique)
+            .map(AllCharactersUniquePerString::checkIfUnique)
             .forEach(System.out::println);
     }
 }

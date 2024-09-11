@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class ReverseString {
@@ -29,6 +30,9 @@ public class ReverseString {
 
         System.out.println("\nReverse using buffer");
         obj.reverseStringUsingStringBuffer(input);
+
+        System.out.println("\nReverse using charArray");
+        obj.reverseStringUsingIntStream(input);
     }
 
     private void reverseStringUsingIterate(String input) {
@@ -65,10 +69,17 @@ public class ReverseString {
     private void reverseStringUsingStringBuffer(String input) {
         String reversed = Stream.of(input)
                 .map(e -> new StringBuffer(e).reverse())
-//                .peek(System.out::println)
                 .collect(Collectors.joining());
         System.out.println(reversed);
     }
 
+    private void reverseStringUsingIntStream(String input) {
+        char[] charArr = input.toCharArray();
+        String reversed = IntStream.range(0, input.length())
+                .mapToObj(i -> charArr[i])
+                .map(String::valueOf)
+                .reduce("", (a, b) -> b + a);
 
+        System.out.println(reversed);
+    }
 }

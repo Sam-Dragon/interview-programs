@@ -11,8 +11,8 @@ public final class SingleTonClassWithThreadSafety {
 
     private static void callThreadMethod() {
         System.out.println(Thread.currentThread()
-            .getName() + " - " + SingleTonClass.getInstance()
-            .hashCode());
+                .getName() + " - " + SingleTonClass.getInstance()
+                .hashCode());
     }
 }
 

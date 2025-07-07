@@ -8,13 +8,13 @@ public class ThreadRunMethodCall {
         // thread.run() executes the method but in same thread
         System.out.println("thread.run() call");
         System.out.println("MainClass > " + Thread.currentThread()
-            .getName());
+                .getName());
         thread.run();
 
         // thread.start() executes the method but in new thread
         System.out.println("\nthread.start() call");
         System.out.println("MainClass > " + Thread.currentThread()
-            .getName());
+                .getName());
         thread.start();
     }
 }
@@ -22,6 +22,6 @@ public class ThreadRunMethodCall {
 class ThreadClass extends Thread {
     public void run() {
         System.out.println("ThreadClass > " + Thread.currentThread()
-            .getName());
+                .getName());
     }
 }

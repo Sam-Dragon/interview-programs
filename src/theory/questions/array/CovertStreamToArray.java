@@ -12,7 +12,9 @@ public class CovertStreamToArray {
         System.out.println();
 
         System.out.println("Array Numbers");
-        int[] numArr = numbers.stream().mapToInt(Integer::valueOf).toArray();
+        int[] numArr = numbers.stream()
+                .mapToInt(Integer::valueOf)
+                .toArray();
         Stream.iterate(0, i -> i < numArr.length, i -> i + 1)
                 .map(i -> numArr[i])
                 .forEach(n -> System.out.print(n + " "));

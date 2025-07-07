@@ -1,10 +1,16 @@
 package theory.questions.streams.lamdas;
 
+@FunctionalInterface
+interface MyFunctionInterface {
+    void jump();
+}
+
 public class CustomInterfaceToThreadClass {
 
     public static void main(String[] args) {
         Runnable runnable = () -> System.out.println(
-                Thread.currentThread().getName() + " :: Runnable Lamda");
+                Thread.currentThread()
+                        .getName() + " :: Runnable Lamda");
         Thread runnableThread = new Thread(runnable);
         runnableThread.setName("Runnable Thread");
         runnableThread.start();
@@ -16,13 +22,9 @@ public class CustomInterfaceToThreadClass {
 //        myFunctionInterfaceThread.start();
 
         Thread myFunctionInterfaceThread = new Thread(() -> System.out.println(
-                Thread.currentThread().getName() + " :: Custom Lamda"));
+                Thread.currentThread()
+                        .getName() + " :: Custom Lamda"));
         myFunctionInterfaceThread.setName("My Function Interface Thread");
         myFunctionInterfaceThread.start();
     }
-}
-
-@FunctionalInterface
-interface MyFunctionInterface {
-    void jump();
 }

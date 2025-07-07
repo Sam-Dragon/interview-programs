@@ -8,7 +8,7 @@ public class LeastValueInArray {
         int[] arr = {30, 33, 40, 24, 45, 21, 56};
 
         var least = IntStream.of(arr)
-            .reduce(Integer::min);
+                .reduce(Integer::min);
         System.out.println("Least: " + least.getAsInt());
     }
 }

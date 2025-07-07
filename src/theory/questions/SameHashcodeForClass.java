@@ -52,7 +52,7 @@ class SameHashcodeClass {
     @Override
     public String toString() {
         return "SameHashcodeClass{" +
-            "name='" + this.name + '\'' +
-            '}';
+                "name='" + this.name + '\'' +
+                '}';
     }
 }

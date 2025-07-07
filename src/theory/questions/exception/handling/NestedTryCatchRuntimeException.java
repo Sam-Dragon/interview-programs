@@ -16,6 +16,7 @@ public class NestedTryCatchRuntimeException {
                 System.out.println(result);
             } catch (ArithmeticException e) {
                 System.out.println("Arithmetic Exception");
+                throw e;
             } catch (NumberFormatException e) {
                 System.out.println("Number Format Exception");
             }

@@ -4,8 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class JoinMethodThreads {
 
-    private static int volatileCounter = 1;
     private static final AtomicInteger atomicCounter = new AtomicInteger(1);
+    private static int volatileCounter = 1;
 
     public static void main(String[] args) throws InterruptedException {
         JoinMethodThreads threads = new JoinMethodThreads();
@@ -18,10 +18,10 @@ public class JoinMethodThreads {
 
                     System.out.println();
                     System.out.println(Thread.currentThread()
-                        .getName() + " > slept for 3 secs");
+                            .getName() + " > slept for 3 secs");
                     Thread.sleep(3000);
                     System.out.println(Thread.currentThread()
-                        .getName() + " > waked up after 3 secs");
+                            .getName() + " > waked up after 3 secs");
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

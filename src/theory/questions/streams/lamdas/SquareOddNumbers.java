@@ -11,8 +11,8 @@ public class SquareOddNumbers {
         IntUnaryOperator squareFunc = n -> n * n;
 
         IntStream.rangeClosed(1, 6)
-            .filter(evenFunction)
-            .map(squareFunc)
-            .forEach(System.out::println);
+                .filter(evenFunction)
+                .map(squareFunc)
+                .forEach(System.out::println);
     }
 }

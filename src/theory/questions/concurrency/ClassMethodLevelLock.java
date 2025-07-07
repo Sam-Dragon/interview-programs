@@ -14,23 +14,23 @@ public class ClassMethodLevelLock {
 
 class StaticMethodLock implements Runnable {
 
-    @Override
-    public void run() {
-        lock();
-    }
-
     public static synchronized void lock() {
         try {
             System.out.println();
             System.out.println("Start Lock acquired by :: " + Thread.currentThread()
-                .getName());
+                    .getName());
             System.out.println("Do some work for 3 secs :: " + Thread.currentThread()
-                .getName());
+                    .getName());
             Thread.sleep(3000);
             System.out.println("Released Lock acquired by :: " + Thread.currentThread()
-                .getName());
+                    .getName());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void run() {
+        lock();
     }
 }

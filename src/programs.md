@@ -7,6 +7,7 @@
 6. Print the Sum of the Square / Cube of number for upto 'N' numbers based on the input.
 
 # MEDIUM
-
+1. How to print even/odd numbers using 2 threads ?
 
 # HARD
+1. How to print even/odd numbers using 4 threads ?

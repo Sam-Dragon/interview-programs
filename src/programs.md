@@ -19,11 +19,13 @@
 
 <details>
 <summary> MEDIUM </summary>
+    
 1. How to print even/odd numbers using 2 threads ?
+
 </details>
 
 <details>
-<summary> MEDIUM </summary>
+<summary> HARD </summary>
     
 1. How to print even/odd numbers using 4 threads ?
 

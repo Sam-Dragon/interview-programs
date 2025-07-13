@@ -23,7 +23,7 @@ public class PairsMatchingSum {
     private void pairsMatchingSum(String arrayInString, int sum) {
         List<Integer> numbers = Stream.of(arrayInString.split(","))
                 .map(Integer::parseInt)
-                .toList();
+                .collect(Collectors.toList());
 
         // list processed for matching sum
         numbers.stream()

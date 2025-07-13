@@ -77,7 +77,7 @@ public class AddUniqueElementsToArrayList {
     public void refactorUsingDistinctWay(String[] arr) {
         List<String> list = Stream.of(arr)
                 .distinct()
-                .toList();
+                .collect(Collectors.toList());
 
         list.forEach(a -> System.out.print(a + " "));
         System.out.println();

@@ -21,7 +21,7 @@
 //
 //        System.out.println("\nPartial Objects");
 //        objects.stream().map(e -> mapper.map(e, PartialObject.class))
-//                .toList().forEach(System.out::println);
+//                .collect(Collectors.toList()).forEach(System.out::println);
 //    }
 //}
 //

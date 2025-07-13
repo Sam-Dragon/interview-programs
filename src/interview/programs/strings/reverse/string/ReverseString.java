@@ -39,7 +39,7 @@ public class ReverseString {
         char[] array = input.toCharArray();
         Stream.iterate(input.length() - 1, i -> i >= 0, i -> i - 1)
                 .map(i -> array[i])
-                .toList()
+                .collect(Collectors.toList())
                 .forEach(System.out::print);
         System.out.println();
     }
@@ -48,7 +48,7 @@ public class ReverseString {
         Stack<String> stack = new Stack<>();
         List<String> characters = Stream.of(input.split(""))
                 .map(stack::push)
-                .toList();
+                .collect(Collectors.toList());
 
         String reversed = characters.stream()
                 .map(e -> stack.pop())

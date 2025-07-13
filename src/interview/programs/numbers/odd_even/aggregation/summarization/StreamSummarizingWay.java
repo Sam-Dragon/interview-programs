@@ -16,7 +16,7 @@ public class StreamSummarizingWay {
         // String of numbers to Integer list
         var numberList = Arrays.stream(numbers.split(","))
                 .map(Integer::parseInt)
-                .toList();
+                .collect(Collectors.toList());
         System.out.println("Input numbers: " + numberList);
 
         IntSummaryStatistics statistics = countNumbers(numberList);

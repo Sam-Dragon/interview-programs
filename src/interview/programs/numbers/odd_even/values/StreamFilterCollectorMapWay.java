@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class StreamFilterCollectorMapWay {
 
@@ -15,7 +16,7 @@ public class StreamFilterCollectorMapWay {
         // String of numbers to Integer list
         var numberList = Arrays.stream(numbers.split(","))
                 .map(Integer::parseInt)
-                .toList();
+                .collect(Collectors.toList());
         System.out.println("Input numbers: " + numberList);
 
         printOddEvenNumbers(numberList);

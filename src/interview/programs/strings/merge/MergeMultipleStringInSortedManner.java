@@ -11,7 +11,7 @@ public class MergeMultipleStringInSortedManner {
 
         Stream.of(array)
                 .map(MergeMultipleStringInSortedManner::SortingString)
-                .toList()
+                .collect(Collectors.toList())
                 .forEach(System.out::println);
     }
 

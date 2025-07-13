@@ -3,6 +3,7 @@ package interview.programs.numbers.odd_even.aggregation.highest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class StreamMaxLamdaWay {
 
@@ -14,7 +15,7 @@ public class StreamMaxLamdaWay {
         // String of numbers to Integer list
         var numberList = Arrays.stream(numbers.split(","))
                 .map(Integer::parseInt)
-                .toList();
+                .collect(Collectors.toList());
         System.out.println("Input numbers: " + numberList);
 
         System.out.println("Max Even Number = " + maxOfNumbers(numberList));

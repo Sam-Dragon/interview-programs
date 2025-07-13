@@ -9,9 +9,11 @@ public class ThreadCreationUsingFramework {
         // Create Executor Service and assign task to it
         ExecutorService service = Executors.newFixedThreadPool(2);
 
+        // use service.execute for runnable interface
         Runnable runnableTask = () -> System.out.println("Running Task using Runnable :: " + Thread.currentThread());
         service.execute(runnableTask);
 
+        // use service.submit for runnable / callable interface
         Callable<String> callableTask = () -> {
             System.out.println("Running Task using Callable :: " + Thread.currentThread());
             Thread.sleep(2000);

@@ -1,15 +1,16 @@
-package interview.programs.concurrency;
+package interview.programs.concurrency.java_7.print_number_1_to_10;
 
-public class TwoThreadsPrintingNumbersOneAfterAnother {
+public class MultipleThreadsJoinMethod {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)
+            throws InterruptedException {
 
         for (int i = 1; i <= 10; i++) {
             int finalI = i;
             Thread first = new Thread(() -> {
                 if (finalI <= 5)
                     System.out.println(Thread.currentThread()
-                            .getName() + " - " + finalI);
+                                             .getName() + " - " + finalI);
             });
             first.setName("first");
             first.start();
@@ -18,7 +19,7 @@ public class TwoThreadsPrintingNumbersOneAfterAnother {
             Thread second = new Thread(() -> {
                 if (finalI > 5)
                     System.out.println(Thread.currentThread()
-                            .getName() + " - " + finalI);
+                                             .getName() + " - " + finalI);
             });
             second.setName("second");
             second.start();

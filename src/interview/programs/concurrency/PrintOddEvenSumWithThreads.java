@@ -12,9 +12,7 @@ public class PrintOddEvenSumWithThreads {
         PrintOddEvenSumWithThreads threads = new PrintOddEvenSumWithThreads();
         int[] arr = {10, 24, 63, 51, 56, 22};
 
-        for (int i = 0; i < arr.length; i++) {
-            int number = arr[i];
-
+        for (int number : arr) {
             Thread evenThread = new Thread(() -> threads.printEven(number));
             evenThread.setName("Even-Thread");
             evenThread.start();

@@ -1,4 +1,4 @@
-package theory.questions.concurrency;
+package theory.questions.concurrency.thread_locks;
 
 public class ClassLevelLock {
 

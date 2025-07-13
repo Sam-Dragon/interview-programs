@@ -1,4 +1,4 @@
-package theory.questions.concurrency;
+package theory.questions.concurrency.thread_misc;
 
 public class ThreadRunMethodCall {
 

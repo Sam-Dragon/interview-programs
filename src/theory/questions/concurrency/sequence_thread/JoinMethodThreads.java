@@ -1,4 +1,4 @@
-package theory.questions.concurrency;
+package theory.questions.concurrency.sequence_thread;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

@@ -1,7 +1,7 @@
 package theory.questions.concurrency.create_thread;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.FutureTask;
+
+import java.util.concurrent.*;
 
 class MyThread extends Thread {
     @Override
@@ -19,18 +19,19 @@ class MyRunnable implements Runnable {
     }
 }
 
-class MyCallable implements Callable {
+class MyCallable implements Callable<String> {
     @Override
-    public Object call() {
+    public String call() {
         System.out.println("Create Thread Using Runnable Interface. Thread :: " + Thread.currentThread()
                                                                                         .getName());
-        return null;
+        return "Callable Interface Called";
     }
 }
 
 public class ThreadCreationNormally {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+            throws ExecutionException, InterruptedException, TimeoutException {
         System.out.println("Main Thread :: " + Thread.currentThread()
                                                      .getName());
 
@@ -44,9 +45,10 @@ public class ThreadCreationNormally {
         runnableThread.start();
 
         MyCallable callable = new MyCallable();
-        FutureTask callableFuture = new FutureTask(callable);
+        FutureTask<String> callableFuture = new FutureTask<>(callable);
         Thread callableThread = new Thread(callableFuture);
         callableThread.setName("CallableInterface");
         callableThread.start();
+        System.out.printf("Return of callable task :: " + callableFuture.get(1000, TimeUnit.SECONDS));
     }
 }

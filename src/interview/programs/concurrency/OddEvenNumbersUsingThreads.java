@@ -6,7 +6,8 @@ public class OddEvenNumbersUsingThreads {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+
         for (int j : array) {
             Callable<Integer> task = new OddEvenTask(j);
             Future<Integer> result = executorService.submit(task);
@@ -27,8 +28,8 @@ class OddEvenTask implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        System.out.println("Running Thread :: " + Thread.currentThread()
-                .getName());
+//        System.out.println("Running Thread :: " + Thread.currentThread()
+//                .getName());
         return number % 2;
     }
 }

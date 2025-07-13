@@ -1,4 +1,4 @@
-package interview.programs.concurrency;
+package interview.programs.concurrency.java_7.print_number_1_to_10_odd_even;
 
 import java.util.function.Predicate;
 

@@ -1,5 +1,6 @@
 package interview.programs.easy.java_8.natural_number;
 
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -10,14 +11,19 @@ public class SumOfNNaturalNumbers {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the number for sum of 'N' Natural numbers");
-        int input = sc.nextInt();
+        Integer input = sc.nextInt();
 
-        if (input < 0) {
-            System.out.println("Invalid Input");
-        } else {
-            var sum = IntStream.rangeClosed(1, input)
-                    .sum();
-            System.out.println("Sum = " + sum);
-        }
+        // Solution - 1
+        var sum = Optional.ofNullable(input)
+                          .map(n -> n * (n + 1) / 2)
+                          .get();
+        System.out.println("Formula -> Sum = " + sum);
+
+        // Solution - 2
+        sum = Optional.ofNullable(input)
+                      .map(n -> IntStream.rangeClosed(1, n)
+                                         .sum())
+                      .get();
+        System.out.println("IntStream -> Sum = " + sum);
     }
 }

@@ -34,6 +34,18 @@
     - I/P - 12345
     - O/P - 15
 
+5. Most repeated element in an array
+    - I/P - {1,2,3,2,3,2,4,5,3,3,6}
+    - O/P - 3
+
+6. List of String to map with key as string and value as boolean
+    - I/P - ["level", "apple", "radar", "banana", "madam"]
+    - O/P - true, false, true, false, true
+
+7. Min fequency of character in string
+   - I/P - "banana appllee"
+   - O/P - b
+
 </details>
 
 <details>

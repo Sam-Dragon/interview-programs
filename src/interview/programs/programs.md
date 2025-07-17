@@ -46,6 +46,17 @@
    - I/P - "banana appllee"
    - O/P - b
 
+8. Distinct Number in Sorted Order ends with 1
+   - I/P - [123, 12, 11, 451, 31, 34, 541, 23, 21, 16] 
+   - O/P - [11, 21, 31, 451, 541]
+
+9. Infinite Stream Example
+
+10. Longest word in string
+    - I/P - "Java Streams make functional programming easy and powerful" 
+    - O/P - "programming"
+   
+
 </details>
 
 <details>

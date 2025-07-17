@@ -17,6 +17,7 @@ public class MostRepeatedElementInArray {
                                        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(map);
 
+        System.out.println();
         System.out.println("Solution - 1");
         map.entrySet()
            .stream()
@@ -24,7 +25,7 @@ public class MostRepeatedElementInArray {
            .map(Map.Entry::getKey)
            .ifPresent(System.out::println);
 
-
+        System.out.println();
         System.out.println("Solution - 2");
         map.entrySet()
            .stream()

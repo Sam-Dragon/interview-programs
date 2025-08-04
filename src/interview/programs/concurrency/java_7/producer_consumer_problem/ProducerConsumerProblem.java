@@ -1,4 +1,4 @@
-package interview.programs.concurrency;
+package interview.programs.concurrency.java_7.producer_consumer_problem;
 
 import java.util.stream.Stream;
 
@@ -29,7 +29,7 @@ public class ProducerConsumerProblem {
 
     synchronized void produce(String message) {
         if (message != null && !message.isEmpty()) {
-            System.out.println("Produced message :: " + message);
+            System.out.println(">> Produced message :: " + message);
             notify();
         } else {
             try {
@@ -42,7 +42,7 @@ public class ProducerConsumerProblem {
 
     synchronized void consume(String message) {
         if (message != null && !message.isEmpty()) {
-            System.out.println("Consumed message :: " + message);
+            System.out.println("<< Consumed message :: " + message);
             notify();
         } else {
             try {

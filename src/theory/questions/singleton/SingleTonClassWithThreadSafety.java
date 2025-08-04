@@ -11,8 +11,8 @@ public final class SingleTonClassWithThreadSafety {
 
     private static void callThreadMethod() {
         System.out.println(Thread.currentThread()
-                .getName() + " - " + SingleTonClass.getInstance()
-                .hashCode());
+                                 .getName() + " - " + SingleTonClass.getInstance()
+                                                                    .hashCode());
     }
 }
 
@@ -24,14 +24,12 @@ class SingleTonClass {
     }
 
     public static SingleTonClass getInstance() {
-        SingleTonClass result = instance;
-        if (result == null) {
+        if (instance == null) {
             synchronized (mutex) {
-                result = instance;
-                if (result == null)
-                    instance = result = new SingleTonClass();
+                if (instance == null)
+                    instance = new SingleTonClass();
             }
         }
-        return result;
+        return instance;
     }
 }

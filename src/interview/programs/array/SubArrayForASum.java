@@ -20,8 +20,8 @@ public class SubArrayForASum {
     }
 
     private static String subArrayForSum(int[] arr, int sum) {
-        int firstIndex = -1;
-        int lastIndex = -1;
+        int firstIndex;
+        int lastIndex;
 
         for (int i = 0; i < arr.length; i++) {
             firstIndex = i + 1;
